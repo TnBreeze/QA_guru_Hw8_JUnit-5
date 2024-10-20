@@ -15,6 +15,7 @@ public class ParameterizedValueTest {
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
     }
 
     @ValueSource(
@@ -24,7 +25,7 @@ public class ParameterizedValueTest {
     @ParameterizedTest(name = "Название предмета Maths по запросу {0}")
 
     @Tag("BLOCKER")
-    void subjectsName(
+    void subjectsNameTest(
             String letters
     ) {
         open("/automation-practice-form");
